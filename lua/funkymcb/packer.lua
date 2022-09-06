@@ -1,7 +1,12 @@
 return require('packer').startup(function(use)
-  -- Basic deps
+  -- Basic must haves
   use 'wbthomason/packer.nvim'
-  use 'nvim-lua/plenary.nvim'
+  use {
+    'nvim-telescope/telescope.nvim',
+    requires = {
+      'nvim-lua/plenary.nvim',
+    }
+  }
   use {
     'kyazdani42/nvim-tree.lua',
     requires = {

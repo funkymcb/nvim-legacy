@@ -42,3 +42,10 @@ vnoremap("<leader>be", "c<c-r>=system('base64', @\")<cr><esc>kJ")
 vnoremap("<leader>bd", "c<c-r>=system('base64 --decode', @\")<cr><esc>")
 vnoremap("J", ":m '>+1<CR>gv=gv")
 vnoremap("K", ":m '<-2<CR>gv=gv")
+
+-- telescope
+nnoremap("<leader>fg", ":lua require('telescope.builtin').live_grep()<CR>")
+nnoremap("<leader>ff", ":lua require('telescope.builtin').find_files()<CR>")
+nnoremap("<leader>fm", ":lua require('telescope.builtin').marks()<CR>")
+nnoremap("<leader>fb", ":lua require('telescope.builtin').buffers()<CR>")
+nnoremap("<leader>fc", ":lua require('telescope.builtin').git_commits()<CR>")
