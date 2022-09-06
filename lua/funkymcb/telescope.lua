@@ -6,7 +6,7 @@ require("telescope").setup({
 
     mappings = {
       i = {
-        ["<C-i>"] = actions.file_split,
+        ["<Tab>"] = actions.file_split, -- workaround for <c-i>
         ["<C-s>"] = actions.file_vsplit,
       },
     }
