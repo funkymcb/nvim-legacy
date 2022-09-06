@@ -9,15 +9,11 @@ require("nvim-tree").setup({
       },
     },
   },
-  --[[
   actions = {
-    open_file = {
-      window_picker = {
-        enable = false
-      },
+    change_dir = {
+      global = true,
     },
   },
-  --]]
 })
 require("nvim-web-devicons").setup()
 
