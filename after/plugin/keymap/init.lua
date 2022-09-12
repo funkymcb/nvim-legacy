@@ -53,4 +53,6 @@ nnoremap("<leader>fc", ":lua require('telescope.builtin').git_commits()<CR>")
 -- fugitive
 nnoremap("<leader>gs", ":G<CR>")
 nnoremap("<leader>gc", ":G commit<CR>")
+nnoremap("<leader>gl", ":tabedit|Gllog<CR>")
 nnoremap("<leader>gp", ":G -c push.default=current push<CR>")
+nnoremap("<leader>gb", ":G blame<CR>")

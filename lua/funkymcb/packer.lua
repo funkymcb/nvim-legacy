@@ -13,12 +13,15 @@ return require('packer').startup(function(use)
       'kyazdani42/nvim-web-devicons',
     }
   }
+  use 'tpope/vim-commentary'
 
   -- git
   use 'tpope/vim-fugitive'
+  use 'airblade/vim-gitgutter'
 
   -- styles
   use 'nvim-treesitter/nvim-treesitter'
+  use 'p00f/nvim-ts-rainbow'
   use 'folke/tokyonight.nvim'
   use 'nvim-lualine/lualine.nvim'
 
