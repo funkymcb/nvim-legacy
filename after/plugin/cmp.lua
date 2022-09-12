@@ -34,7 +34,7 @@ cmp.setup({
     { name = 'vsnip' },
     { name = 'path' },
   }, {
-    { name = 'bugger' },
+    { name = 'buffer' },
   }),
 
   cmp.setup.cmdline(':', {
