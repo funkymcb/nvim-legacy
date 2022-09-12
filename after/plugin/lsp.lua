@@ -17,6 +17,7 @@ local on_attach = function(client, bufnr)
   -- require('completion').on_attach()
 end
 
+-- golang
 require('lspconfig')['gopls'].setup{
   on_attach = on_attach,
 }

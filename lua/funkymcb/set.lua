@@ -29,3 +29,6 @@ vim.opt.inccommand = "nosplit"
 vim.opt.foldmethod = "manual"
 vim.opt.updatetime = 100
 vim.opt.mouse = "a"
+
+-- for nvim completion
+vim.opt.completeopt = "menu,menuone,noselect"
