@@ -25,6 +25,7 @@ return require('packer').startup(function(use)
   use 'folke/tokyonight.nvim'
   use 'ellisonleao/gruvbox.nvim'
   use 'nvim-lualine/lualine.nvim'
+  use 'lukas-reineke/indent-blankline.nvim'
 
   -- completion and stuff
   use 'neovim/nvim-lspconfig'
