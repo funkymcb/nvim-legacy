@@ -1,18 +1,22 @@
-local custom_lsp_attach = function(client)
-  vim.api.nvim_buf_set_keymap(0, 'n', '<space>d', '<cmd>lua vim.lsp.buf.hover()<CR>', {noremap = true})
-  vim.api.nvim_buf_set_keymap(0, 'n', '<space>gd', '<cmd>lua vim.lsp.buf.definition()<CR>', {noremap = true})
-  vim.api.nvim_buf_set_keymap(0, 'n', '<space>n', '<cmd>lua vim.diagnostic.goto_next()<CR>', {noremap = true})
-  vim.api.nvim_buf_set_keymap(0, 'n', '<space>p', '<cmd>lua vim.diagnostic.goto_prev()<CR>', {noremap = true})
-  -- ... and other keymappings for LSP
+local opts = { noremap=true, silent=true}
+vim.keymap.set('n', '<space>n', vim.diagnostic.goto_next, opts)
+vim.keymap.set('n', '<space>p', vim.diagnostic.goto_prev, opts)
 
-  -- Use LSP as the handler for omnifunc.
-  --    See `:help omnifunc` and `:help ins-completion` for more information.
-  vim.api.nvim_buf_set_option(0, 'omnifunc', 'v:lua.vim.lsp.omnifunc')
+local on_attach = function(client, bufnr)
+  vim.api.nvim_buf_set_option(bufnr, 'omnifunc', 'v:lua.vim.lsp.omnifunc')
+
+  local bufopts = { noremap=true, silent=true, buffer=bufnr }
+  vim.keymap.set('n', '<space>d', vim.lsp.buf.hover, bufopts)
+  vim.keymap.set('n', '<space>gd', vim.lsp.buf.definition, bufopts)
 
   -- Use LSP as the handler for formatexpr.
   --    See `:help formatexpr` for more information.
-  vim.api.nvim_buf_set_option(0, 'formatexpr', 'v:lua.vim.lsp.formatexpr()')
+  vim.api.nvim_buf_set_option(bufnr, 'formatexpr', 'v:lua.vim.lsp.formatexpr()')
 
   -- For plugins with an `on_attach` callback, call them here. For example:
   -- require('completion').on_attach()
 end
+
+require('lspconfig')['gopls'].setup{
+  on_attach = on_attach,
+}
