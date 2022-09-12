@@ -23,6 +23,7 @@ return require('packer').startup(function(use)
   use 'nvim-treesitter/nvim-treesitter'
   use 'p00f/nvim-ts-rainbow'
   use 'folke/tokyonight.nvim'
+  use 'ellisonleao/gruvbox.nvim'
   use 'nvim-lualine/lualine.nvim'
 
   -- completion and stuff
