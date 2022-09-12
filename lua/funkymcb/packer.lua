@@ -14,6 +14,9 @@ return require('packer').startup(function(use)
     }
   }
 
+  -- git
+  use 'tpope/vim-fugitive'
+
   -- styles
   use 'nvim-treesitter/nvim-treesitter'
   use 'folke/tokyonight.nvim'
