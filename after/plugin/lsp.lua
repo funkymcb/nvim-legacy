@@ -8,6 +8,7 @@ local on_attach = function(client, bufnr)
   local bufopts = { noremap=true, silent=true, buffer=bufnr }
   vim.keymap.set('n', '<space>d', vim.lsp.buf.hover, bufopts)
   vim.keymap.set('n', '<space>gd', vim.lsp.buf.definition, bufopts)
+  vim.keymap.set('n', '<space>gi', vim.lsp.buf.implementation, bufopts)
 
   -- Use LSP as the handler for formatexpr.
   --    See `:help formatexpr` for more information.
@@ -19,5 +20,10 @@ end
 
 -- golang
 require('lspconfig')['gopls'].setup{
+  on_attach = on_attach,
+}
+
+-- lua
+require('lspconfig')['luau_lsp'].setup{
   on_attach = on_attach,
 }

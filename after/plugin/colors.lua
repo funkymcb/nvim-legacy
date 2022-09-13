@@ -1,10 +1,12 @@
 -- tokyoooo
 vim.cmd[[colorscheme tokyonight]]
 require("tokyonight").setup({
-  style = "night",
+  style = "storm",
   styles = {
     comments = { italic = true },
     keywords = { italic = true },
+    sidebar = "normal",
+    floats = "normal",
   },
   transparent = true,
 })
