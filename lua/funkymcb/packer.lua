@@ -24,6 +24,7 @@ return require('packer').startup(function(use)
   use 'p00f/nvim-ts-rainbow'
   use 'folke/tokyonight.nvim'
   use 'ellisonleao/gruvbox.nvim'
+  use 'edeneast/nightfox.nvim'
   use 'nvim-lualine/lualine.nvim'
   use 'lukas-reineke/indent-blankline.nvim'
 
