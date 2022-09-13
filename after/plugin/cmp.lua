@@ -32,15 +32,20 @@ cmp.setup({
   sources = cmp.config.sources({
     { name = 'nvim_lsp' },
     { name = 'vsnip' },
-    { name = 'path' },
+    { name = 'path', },
   }, {
-    { name = 'buffer' },
+    { 
+      name = 'buffer',
+      option = {
+        keyword_length = 3,
+      },
+    },
   }),
 
   cmp.setup.cmdline(':', {
     mapping = cmp.mapping.preset.cmdline(),
     sources = cmp.config.sources({
-      { name = 'path' }
+      { name = 'path', },
     }, {
       { name = 'cmdline' }
     })
