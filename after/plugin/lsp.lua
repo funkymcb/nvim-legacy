@@ -13,12 +13,12 @@ local on_attach = function(client, bufnr)
   -- Use LSP as the handler for formatexpr.
   --    See `:help formatexpr` for more information.
   vim.api.nvim_buf_set_option(bufnr, 'formatexpr', 'v:lua.vim.lsp.formatexpr()')
-
-  -- For plugins with an `on_attach` callback, call them here. For example:
-  -- require('completion').on_attach()
 end
 
 -- golang
+-- gofmt and goimport on save
+require("go").setup()
+vim.api.nvim_exec([[ autocmd BufWritePre *.go :silent! lua require('go.format').goimport() ]], false)
 require('lspconfig')['gopls'].setup{
   on_attach = on_attach,
 }
