@@ -13,7 +13,6 @@ return require('packer').startup(function(use)
       'kyazdani42/nvim-web-devicons',
     }
   }
-  use 'tpope/vim-commentary'
 
   -- git
   use 'tpope/vim-fugitive'
@@ -22,8 +21,6 @@ return require('packer').startup(function(use)
   -- styles
   use 'nvim-treesitter/nvim-treesitter'
   use 'p00f/nvim-ts-rainbow'
-  use 'folke/tokyonight.nvim'
-  use 'ellisonleao/gruvbox.nvim'
   use 'edeneast/nightfox.nvim'
   use 'nvim-lualine/lualine.nvim'
   use 'lukas-reineke/indent-blankline.nvim'
@@ -39,11 +36,11 @@ return require('packer').startup(function(use)
 			use 'hrsh7th/nvim-cmp',
 			use 'hrsh7th/cmp-vsnip',
 			use 'hrsh7th/vim-vsnip',
-      use 'ray-x/lsp_signature.nvim'
+      use 'ray-x/lsp_signature.nvim',
+	    use 'windwp/nvim-autopairs'
 		}
 	}
   use 'ray-x/go.nvim'
   use 'ray-x/guihua.lua'
-
-	use 'windwp/nvim-autopairs'
+  use 'tpope/vim-commentary'
 end)

@@ -27,3 +27,32 @@ require('lspconfig')['gopls'].setup{
 require('lspconfig')['luau_lsp'].setup{
   on_attach = on_attach,
 }
+
+-- yaml
+require('lspconfig')['yamlls'].setup{
+  on_attach = on_attach,
+  settings = {
+    yaml = {
+      schemas = {
+        -- kubernetes
+        kubernetes = {
+          "deployment.yaml",
+          "deployment-patch.yaml",
+          "patch.yaml",
+          "cronjob.yaml",
+          "cronjob-patch.yaml",
+          "ingress.yaml",
+          "service.yaml",
+          "namespace.yaml",
+          "hpa.yaml"
+        },
+        ["http://json.schemastore.org/kustomization"] = "kustomization.yaml",
+        -- github workflows
+        ["https://json.schemastore.org/github-workflow.json"] = "/.github/workflows/*",
+        -- azure pipelines
+        ["https://dev.azure.com/finorun/_apis/distributedtask/yamlschema?api-version=5.1"] = {"azure-pipelines.yaml, azure-pipelines.yml"},
+      },
+    },
+  },
+}
+
