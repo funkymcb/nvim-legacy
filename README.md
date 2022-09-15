@@ -1,6 +1,7 @@
 # My Neovim configuratoin
 
 ## Get this config running
+- Clone this Repo (Copy the files) to `~/.config/nvim/`
 - Install [neovim](https://github.com/neovim/neovim) >= 0.7.0
 - Install [Packer Plugin Manager](https://github.com/wbthomason/packer.nvim)
     ```bash
@@ -8,6 +9,7 @@
     ~/.local/share/nvim/site/pack/packer/start/packer.nvim
     ```
 - Run: `:PackerInstall`
+- Make sure to use a [patched font](https://www.nerdfonts.com/) in your terminal
 - Install Language Servers:
     - [gopls](https://github.com/golang/tools/tree/master/gopls)
     - [luau_lsp](https://github.com/JohnnyMorganz/luau-lsp)
