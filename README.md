@@ -1,5 +1,19 @@
 # My Neovim configuratoin
 
+## Get this config running
+- Install [neovim](https://github.com/neovim/neovim) >= 0.7.0
+- Install [Packer Plugin Manager](https://github.com/wbthomason/packer.nvim)
+    ```bash
+    git clone --depth 1 https://github.com/wbthomason/packer.nvim\
+    ~/.local/share/nvim/site/pack/packer/start/packer.nvim
+    ```
+- Run: `:PackerInstall`
+- Install Language Servers:
+    - [gopls](https://github.com/golang/tools/tree/master/gopls)
+    - [luau_lsp](https://github.com/JohnnyMorganz/luau-lsp)
+    - [marksman](https://github.com/artempyanykh/marksman)
+    - [yamlls](https://github.com/redhat-developer/yaml-language-server)
+
 ## Plugins used
 
 ### Basic must haves
@@ -34,4 +48,4 @@
 - [treesitter](https://github.com/nvim-treesitter/nvim-treesitter)
 - [ts-rainbow](https://github.com/p00f/nvim-ts-rainbow)
 - [nightfox](https://github.com/EdenEast/nightfox.nvim)
-- [inden-blankline](https://github.com/lukas-reineke/indent-blankline.nvim)
+- [indent-blankline](https://github.com/lukas-reineke/indent-blankline.nvim)
