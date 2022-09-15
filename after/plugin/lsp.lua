@@ -28,6 +28,11 @@ require('lspconfig')['luau_lsp'].setup{
   on_attach = on_attach,
 }
 
+-- markdown
+require('lspconfig')['marksman'].setup{
+  on_attach = on_attach,
+}
+
 -- yaml
 require('lspconfig')['yamlls'].setup{
   on_attach = on_attach,
