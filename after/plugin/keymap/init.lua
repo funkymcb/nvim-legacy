@@ -45,6 +45,7 @@ vnoremap("K", ":m '<-2<CR>gv=gv")
 
 -- telescope
 nnoremap("<leader>fg", ":lua require('telescope.builtin').live_grep()<CR>")
+nnoremap("<leader>fs", ":lua require('telescope.builtin').grep_string()<CR>")
 nnoremap("<leader>ff", ":lua require('telescope.builtin').find_files()<CR>")
 nnoremap("<leader>fm", ":lua require('telescope.builtin').marks()<CR>")
 nnoremap("<leader>fb", ":lua require('telescope.builtin').buffers()<CR>")
