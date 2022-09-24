@@ -33,6 +33,11 @@ require('lspconfig')['marksman'].setup{
   on_attach = on_attach,
 }
 
+-- rust
+require('lspconfig')['rust_analyzer'].setup{
+  on_attach = on_attach,
+}
+
 -- yaml
 require('lspconfig')['yamlls'].setup{
   on_attach = on_attach,

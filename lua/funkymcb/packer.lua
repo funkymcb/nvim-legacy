@@ -43,4 +43,7 @@ return require('packer').startup(function(use)
   use 'ray-x/go.nvim'
   use 'ray-x/guihua.lua'
   use 'tpope/vim-commentary'
+
+  -- local developing
+  use '~/Coding/github.com/funkymcb/nvim-rest-client'
 end)
