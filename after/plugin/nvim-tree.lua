@@ -11,6 +11,10 @@ require("nvim-tree").setup({
     enable = true,
   },
 
+  git = {
+    ignore = false,
+  },
+
   view = {
     mappings = {
       list = {
