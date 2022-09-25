@@ -45,5 +45,5 @@ return require('packer').startup(function(use)
   use 'tpope/vim-commentary'
 
   -- local developing
-  use '~/Coding/github.com/funkymcb/nvim-rest-client'
+  use '~/Coding/github.com/funkymcb/nvim_rest_client'
 end)
