@@ -1,4 +1,5 @@
 # My Neovim configuratoin
+My new and clean all lua neovim config. Love it!
 
 ## Get this config running
 - Clone this Repo (Copy the files) to `~/.config/nvim/`
@@ -12,7 +13,7 @@
 - Make sure to use a [patched font](https://www.nerdfonts.com/) in your terminal
 - Install Language Servers:
     - [gopls](https://github.com/golang/tools/tree/master/gopls)
-    - [luau_lsp](https://github.com/JohnnyMorganz/luau-lsp)
+    - [lua-language-server](https://github.com/sumneko/lua-language-server)
     - [marksman](https://github.com/artempyanykh/marksman)
     - [yamlls](https://github.com/redhat-developer/yaml-language-server)
 
