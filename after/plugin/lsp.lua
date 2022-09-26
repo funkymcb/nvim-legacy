@@ -24,7 +24,25 @@ require('lspconfig')['gopls'].setup{
 }
 
 -- lua
-require('lspconfig')['luau_lsp'].setup{
+require('lspconfig')['sumneko_lua'].setup{
+   settings = {
+      -- these settings increase lsp initialization for lua files
+      -- disable for non neovim lua development (is this even a thing?)
+      Lua = {
+         runtime = {
+            version = 'LuaJIT',
+         },
+         diagnostic = {
+            globals = {'vim'},
+         },
+         workspace = {
+            library = vim.api.nvim_get_runtime_file("", true),
+         },
+         telemetry = {
+            enable = false,
+         },
+      },
+   },
    on_attach = on_attach,
 }
 
