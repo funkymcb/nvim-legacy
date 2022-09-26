@@ -2,10 +2,10 @@ vim.cmd [[highlight LspSignatureActiveCustomParameter guifg=#31C236 gui=nocombin
 
 -- signature setup (floating window over function completion)
 require'lsp_signature'.setup({
-  bind = true,
-  hint_prefix = "💡 ",
-  hi_parameter = "LspSignatureActiveCustomParameter",
-  handler_opts = {
-    border = "rounded"
-  }
+   bind = true,
+   hint_prefix = "💡 ",
+   hi_parameter = "LspSignatureActiveCustomParameter",
+   handler_opts = {
+      border = "rounded"
+   }
 }, bufnr)
