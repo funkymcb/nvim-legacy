@@ -15,13 +15,30 @@ local on_attach = function(client, bufnr)
    vim.api.nvim_buf_set_option(bufnr, 'formatexpr', 'v:lua.vim.lsp.formatexpr()')
 end
 
+-- Set up lspconfig capabilities
+local capabilities = require('cmp_nvim_lsp').update_capabilities(vim.lsp.protocol.make_client_capabilities())
+capabilities.textDocument.completion.completionItem.snippetSupport  = true
+
 -- golang
 -- gofmt and goimport on save
 require("go").setup()
 vim.api.nvim_exec([[ autocmd BufWritePre *.go :silent! lua require('go.format').goimport() ]], false)
 require('lspconfig')['gopls'].setup{
    on_attach = on_attach,
+   capabilities = capabilities,
 }
+
+-- html
+require('lspconfig')['html'].setup{
+   on_attach = on_attach,
+   capabilities = capabilities,
+}
+
+-- trouble to install jsonls
+-- require('jsonls')['jsonls'].setup{
+--    on_attach = on_attach,
+--    capabilities = capabilities,
+-- }
 
 -- lua
 require('lspconfig')['sumneko_lua'].setup{
@@ -44,21 +61,26 @@ require('lspconfig')['sumneko_lua'].setup{
       },
    },
    on_attach = on_attach,
+   capabilities = capabilities,
 }
 
 -- markdown
 require('lspconfig')['marksman'].setup{
    on_attach = on_attach,
+   capabilities = capabilities,
 }
 
 -- rust
 require('lspconfig')['rust_analyzer'].setup{
    on_attach = on_attach,
+   capabilities = capabilities, 
 }
 
 -- yaml
 require('lspconfig')['yamlls'].setup{
    on_attach = on_attach,
+   capabilities = capabilities,
+
    settings = {
       yaml = {
          schemas = {

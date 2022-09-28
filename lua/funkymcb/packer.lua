@@ -44,6 +44,14 @@ return require('packer').startup(function(use)
    use 'ray-x/guihua.lua'
    use 'tpope/vim-commentary'
 
+   -- debugging
+   use 'mfussenegger/nvim-dap'
+   use 'rcarriga/nvim-dap-ui'
+   -- neovim lua
+   use 'jbyuki/one-small-step-for-vimkind'
+
    -- local developing
    use '~/Coding/github.com/funkymcb/nvim-rest-client'
+   -- use this after release:
+   -- use 'funkymcb/nvim-rest-client'
 end)

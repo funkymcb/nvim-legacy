@@ -20,8 +20,6 @@ nnoremap("<C-u>", "<C-u>zz")
 
 nnoremap("<C-p>", "\"+p")
 
-nnoremap("<Tab>", "gt")
-nnoremap("<S-Tab>", "gT")
 nnoremap("<leader>j", "<C-W><C-J>")
 nnoremap("<leader>k", "<C-W><C-K>")
 nnoremap("<leader>h", "<C-W><C-H>")
@@ -50,6 +48,8 @@ nnoremap("<leader>ff", ":lua require('telescope.builtin').find_files()<CR>")
 nnoremap("<leader>fm", ":lua require('telescope.builtin').marks()<CR>")
 nnoremap("<leader>fb", ":lua require('telescope.builtin').buffers()<CR>")
 nnoremap("<leader>fc", ":lua require('telescope.builtin').git_commits()<CR>")
+-- nvim-rest-client
+nnoremap("<leader>fr", ":NvimRestClientFindRequests<CR>")
 
 -- fugitive
 nnoremap("<leader>gs", ":G<CR>")
@@ -57,3 +57,13 @@ nnoremap("<leader>gc", ":G commit<CR>")
 nnoremap("<leader>gl", ":tabedit|Gllog<CR>")
 nnoremap("<leader>gp", ":G -c push.default=current push<CR>")
 nnoremap("<leader>gb", ":G blame<CR>")
+
+-- debugging
+nnoremap("<F5>", ":lua require'osv'.run_this()<CR>")
+nnoremap("<F6>", ":lua require'dapui'.toggle()<CR>")
+nnoremap("<F7>", ":lua require'osv'.run_this()<CR>")
+nnoremap("<F8>", ":lua require'dap'.toggle_breakpoint()<CR>")
+nnoremap("<F9>", ":lua require'dap'.continue()<CR>")
+nnoremap("<F10>", ":lua require'dap'.step_over()<CR>")
+nnoremap("<S-F10>", ":lua require'dap'.step_into()<CR>")
+nnoremap("<F12>", ":lua require'dap.ui.widgets'.hover()<CR>")
