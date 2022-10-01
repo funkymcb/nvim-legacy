@@ -50,7 +50,7 @@ require('lspconfig')['sumneko_lua'].setup{
             version = 'LuaJIT',
          },
          diagnostic = {
-            globals = {'vim'},
+            globals = { 'vim' },
          },
          workspace = {
             library = vim.api.nvim_get_runtime_file("", true),
@@ -73,7 +73,7 @@ require('lspconfig')['marksman'].setup{
 -- rust
 require('lspconfig')['rust_analyzer'].setup{
    on_attach = on_attach,
-   capabilities = capabilities, 
+   capabilities = capabilities,
 }
 
 -- yaml
@@ -89,6 +89,9 @@ require('lspconfig')['yamlls'].setup{
                "deployment.yaml",
                "deployment-patch.yaml",
                "patch.yaml",
+               "dev-patch.yaml",
+               "test-patch.yaml",
+               "prod-patch.yaml",
                "cronjob.yaml",
                "cronjob-patch.yaml",
                "ingress.yaml",
