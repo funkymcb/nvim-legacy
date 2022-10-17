@@ -1,4 +1,5 @@
 require("nvim-tree").setup({
+   open_on_setup = true,
    open_on_setup_file = true,
    create_in_closed_folder = true,
    open_on_tab = true,
