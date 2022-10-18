@@ -15,9 +15,7 @@ local on_attach = function(client, bufnr)
    vim.api.nvim_buf_set_option(bufnr, 'formatexpr', 'v:lua.vim.lsp.formatexpr()')
 end
 
---Enable (broadcasting) snippet capability for completion
-local capabilities = vim.lsp.protocol.make_client_capabilities()
-capabilities.textDocument.completion.completionItem.snippetSupport = true
+local capabilities = require('cmp_nvim_lsp').default_capabilities()
 
 -- golang
 -- gofmt and goimport on save
