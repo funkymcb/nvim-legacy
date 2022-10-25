@@ -101,7 +101,9 @@ require('lspconfig')['yamlls'].setup{
             -- github workflows
             ["https://json.schemastore.org/github-workflow.json"] = "/.github/workflows/*",
             -- azure pipelines
-            ["https://dev.azure.com/finorun/_apis/distributedtask/yamlschema?api-version=5.1"] = {"azure-pipelines.yaml, azure-pipelines.yml"},
+            ["https://dev.azure.com/finorun/_apis/distributedtask/yamlschema"] = {
+               "azure-pipelines.yaml, azure-pipelines.yml"
+            },
          },
       },
    },
