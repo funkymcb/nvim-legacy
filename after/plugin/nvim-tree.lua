@@ -1,6 +1,7 @@
 require("nvim-tree").setup({
    create_in_closed_folder = true,
    open_on_tab = true,
+   open_on_setup = true,
 
    hijack_directories = {
       enable = false,
