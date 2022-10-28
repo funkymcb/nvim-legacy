@@ -23,6 +23,7 @@ cmp.setup({
       ['<C-d>'] = cmp.mapping.scroll_docs(4),
       ['<Left>'] = cmp.mapping.abort(),
       ['<C-c>'] = cmp.mapping.close(),
+      ['<C-l>'] = cmp.mapping.complete(),
       ['<CR>'] = cmp.mapping.confirm({
          behavior = cmp.ConfirmBehavior.Insert,
          select = true,
@@ -42,12 +43,18 @@ cmp.setup({
       },
    }),
 
+    cmp.setup.cmdline({ '/', '?' }, {
+      mapping = cmp.mapping.preset.cmdline(),
+      sources = {
+        { name = 'buffer' }
+      }
+    }),
+
    cmp.setup.cmdline(':', {
       mapping = cmp.mapping.preset.cmdline(),
       sources = cmp.config.sources({
          { name = 'path', },
-      }, {
-         { name = 'cmdline' }
+         { name = 'cmdline' },
       })
    })
 })
