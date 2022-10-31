@@ -24,7 +24,6 @@ vim.opt.wrap = false
 vim.opt.wrapscan = false
 
 vim.opt.scrolloff = 10
-vim.opt.colorcolumn = "80"
 vim.opt.inccommand = "nosplit"
 vim.opt.foldmethod = "manual"
 vim.opt.updatetime = 100
