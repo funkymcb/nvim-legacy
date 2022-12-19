@@ -27,17 +27,23 @@ return require('packer').startup(function(use)
 
    -- completion and stuff
    use {
-      'neovim/nvim-lspconfig',
+      'VonHeikemen/lsp-zero.nvim',
       requires = {
-         use 'hrsh7th/cmp-nvim-lsp',
-         use 'hrsh7th/cmp-buffer',
-         use 'hrsh7th/cmp-path',
-         use 'hrsh7th/cmp-cmdline',
-         use 'hrsh7th/nvim-cmp',
-         use 'hrsh7th/cmp-vsnip',
-         use 'hrsh7th/vim-vsnip',
-         use 'ray-x/lsp_signature.nvim',
-         use 'windwp/nvim-autopairs'
+         'neovim/nvim-lspconfig',
+         'williamboman/mason.nvim',
+         'williamboman/mason-lspconfig.nvim',
+         'hrsh7th/nvim-cmp',
+         'hrsh7th/cmp-nvim-lsp',
+         'hrsh7th/cmp-buffer',
+         'hrsh7th/cmp-path',
+         'hrsh7th/cmp-cmdline',
+         'saadparwaiz1/cmp_luasnip',
+         'hrsh7th/cmp-nvim-lsp',
+         'hrsh7th/cmp-nvim-lua',
+         'L3MON4D3/LuaSnip',
+         'rafamadriz/friendly-snippets',
+         'ray-x/lsp_signature.nvim',
+         'windwp/nvim-autopairs',
       }
    }
    use 'ray-x/go.nvim'

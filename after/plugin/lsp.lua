@@ -1,84 +1,29 @@
-local opts = { noremap=true, silent=true}
-vim.keymap.set('n', '<space>n', vim.diagnostic.goto_next, opts)
-vim.keymap.set('n', '<space>p', vim.diagnostic.goto_prev, opts)
+local lsp = require("lsp-zero")
+lsp.preset("recommended")
 
-local on_attach = function(client, bufnr)
-   vim.api.nvim_buf_set_option(bufnr, 'omnifunc', 'v:lua.vim.lsp.omnifunc')
+lsp.ensure_installed({
+  'eslint',
+  'gopls',
+  'marksman',
+  'rust_analyzer',
+  'sumneko_lua',
+  'tsserver',
+  'yamlls',
+})
 
-   local bufopts = { noremap=true, silent=true, buffer=bufnr }
-   vim.keymap.set('n', '<space>d', vim.lsp.buf.hover, bufopts)
-   vim.keymap.set('n', '<space>gd', vim.lsp.buf.definition, bufopts)
-   vim.keymap.set('n', '<space>gi', vim.lsp.buf.implementation, bufopts)
-
-   -- Use LSP as the handler for formatexpr.
-   --    See `:help formatexpr` for more information.
-   vim.api.nvim_buf_set_option(bufnr, 'formatexpr', 'v:lua.vim.lsp.formatexpr()')
-end
-
-local capabilities = require('cmp_nvim_lsp').default_capabilities()
-
--- golang
--- gofmt and goimport on save
-require("go").setup()
-vim.api.nvim_exec([[ autocmd BufWritePre *.go :silent! lua require('go.format').goimport() ]], false)
-require('lspconfig')['gopls'].setup{
-   on_attach = on_attach,
-   capabilities = capabilities,
-}
-
--- html
-require('lspconfig')['html'].setup{
-   on_attach = on_attach,
-   capabilities = capabilities,
-}
-
--- TODO: fix trouble to install jsonls
--- require('jsonls')['jsonls'].setup{
---    on_attach = on_attach,
---    capabilities = capabilities,
--- }
-
--- lua
-require('lspconfig')['sumneko_lua'].setup{
-   settings = {
-      -- these settings increase lsp initialization for lua files
-      -- disable for non neovim lua development (is this even a thing?)
-      Lua = {
-         runtime = {
-            version = 'LuaJIT',
-         },
-         diagnostic = {
-            globals = { 'vim' },
-         },
-         workspace = {
-            library = vim.api.nvim_get_runtime_file("", true),
-         },
-         telemetry = {
-            enable = false,
-         },
-      },
-   },
-   on_attach = on_attach,
-   capabilities = capabilities,
-}
-
--- markdown
-require('lspconfig')['marksman'].setup{
-   on_attach = on_attach,
-   capabilities = capabilities,
-}
-
--- rust
-require('lspconfig')['rust_analyzer'].setup{
-   on_attach = on_attach,
-   capabilities = capabilities,
-}
+-- Fix Undefined global 'vim'
+lsp.configure('sumneko_lua', {
+    settings = {
+        Lua = {
+            diagnostics = {
+                globals = { 'vim' }
+            }
+        }
+    }
+})
 
 -- yaml
-require('lspconfig')['yamlls'].setup{
-   on_attach = on_attach,
-   capabilities = capabilities,
-
+lsp.configure('yamlls', {
    settings = {
       yaml = {
          schemas = {
@@ -107,5 +52,29 @@ require('lspconfig')['yamlls'].setup{
          },
       },
    },
-}
+})
 
+lsp.on_attach(function(client, bufnr)
+   local opts = {buffer = bufnr, remap = false}
+
+   vim.keymap.set('n', '<space>d', vim.lsp.buf.hover, bufopts)
+   vim.keymap.set('n', '<space>gd', vim.lsp.buf.definition, bufopts)
+   vim.keymap.set('n', '<space>gi', vim.lsp.buf.implementation, bufopts)
+   vim.keymap.set('n', '<space>n', vim.diagnostic.goto_next, opts)
+   vim.keymap.set('n', '<space>p', vim.diagnostic.goto_prev, opts)
+
+   -- -- Use LSP as the handler for formatexpr.
+   -- --    See `:help formatexpr` for more information.
+   -- vim.api.nvim_buf_set_option(bufnr, 'formatexpr', 'v:lua.vim.lsp.formatexpr()')
+end)
+
+lsp.setup()
+
+vim.diagnostic.config({
+   virtual_text = true,
+})
+
+-- golang
+-- gofmt and goimport on save
+require("go").setup()
+vim.api.nvim_exec([[ autocmd BufWritePre *.go :silent! lua require('go.format').goimport() ]], false)
