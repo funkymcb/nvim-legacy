@@ -56,6 +56,9 @@ return require('packer').startup(function(use)
    -- neovim lua
    use 'jbyuki/one-small-step-for-vimkind'
 
+   -- fun fun fun
+   use 'eandrju/cellular-automaton.nvim'
+
    -- local developing
    use '~/Coding/github.com/funkymcb/nvim-rest-client'
    -- use this after release:
