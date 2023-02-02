@@ -4,7 +4,7 @@ local cmp = require'cmp'
 cmp.setup({
    snippet = {
       expand = function(args)
-         vim.fn["vsnip#anonymous"](args.body)
+         require('luasnip').lsp_expand(args.body)
       end,
    },
 
@@ -32,7 +32,7 @@ cmp.setup({
 
    sources = cmp.config.sources({
       { name = 'nvim_lsp' },
-      { name = 'vsnip' },
+      { name = 'luasnip' },
       { name = 'path', },
    }, {
       {
@@ -63,3 +63,6 @@ cmp.event:on(
 'confirm_done',
 cmp_autopairs.on_confirm_done()
 )
+
+-- SNIPPETS!!!
+require("luasnip.loaders.from_vscode").lazy_load()
