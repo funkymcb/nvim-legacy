@@ -189,6 +189,11 @@ _G.packer_plugins = {
     path = "/Users/petery/.local/share/nvim/site/pack/packer/start/nvim-lspconfig",
     url = "https://github.com/neovim/nvim-lspconfig"
   },
+  ["nvim-rest-client"] = {
+    loaded = true,
+    path = "/Users/petery/.local/share/nvim/site/pack/packer/start/nvim-rest-client",
+    url = "/Users/petery/Coding/github.com/funkymcb/nvim-rest-client"
+  },
   ["nvim-tree.lua"] = {
     loaded = true,
     path = "/Users/petery/.local/share/nvim/site/pack/packer/start/nvim-tree.lua",

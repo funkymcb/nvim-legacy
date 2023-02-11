@@ -60,7 +60,7 @@ return require('packer').startup(function(use)
    use 'eandrju/cellular-automaton.nvim'
 
    -- local developing
-   -- use '~/Coding/github.com/funkymcb/nvim-rest-client'
+   use '~/Coding/github.com/funkymcb/nvim-rest-client'
    -- use this after release:
    -- use 'funkymcb/nvim-rest-client'
 end)

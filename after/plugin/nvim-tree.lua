@@ -5,6 +5,8 @@ require("nvim-tree").setup({
       enable = false,
    },
 
+   respect_buf_cwd = true,
+
    diagnostics = {
       enable = true,
    },
