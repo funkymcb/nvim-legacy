@@ -2,24 +2,12 @@ local lsp = require("lsp-zero")
 lsp.preset("recommended")
 
 lsp.ensure_installed({
-  'eslint',
-  'gopls',
-  'marksman',
-  'rust_analyzer',
-  'sumneko_lua',
-  'tsserver',
-  'yamlls',
-})
-
--- Fix Undefined global 'vim'
-lsp.configure('sumneko_lua', {
-    settings = {
-        Lua = {
-            diagnostics = {
-                globals = { 'vim' }
-            }
-        }
-    }
+   'eslint',
+   'gopls',
+   'marksman',
+   'rust_analyzer',
+   'tsserver',
+   'yamlls',
 })
 
 -- yaml
