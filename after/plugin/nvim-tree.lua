@@ -1,6 +1,11 @@
 require("nvim-tree").setup({
    open_on_tab = true,
 
+   update_focused_file = {
+      enable = true,
+      update_root = true,
+   },
+
    hijack_directories = {
       enable = false,
    },

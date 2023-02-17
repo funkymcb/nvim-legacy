@@ -6,6 +6,4 @@ vim.g.gitgutter_highlight_linenrs = 1
 vim.g.loaded = 1
 vim.g.loaded_netrwPlugin = 1
 
--- BUG would love to set this to 0, but there is a bug with nvim-cmp
--- hide command line
 vim.o.cmdheight = 1
