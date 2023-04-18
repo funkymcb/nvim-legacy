@@ -119,6 +119,16 @@ _G.packer_plugins = {
     path = "/Users/petery/.local/share/nvim/site/pack/packer/start/friendly-snippets",
     url = "https://github.com/rafamadriz/friendly-snippets"
   },
+  ["go.nvim"] = {
+    loaded = true,
+    path = "/Users/petery/.local/share/nvim/site/pack/packer/start/go.nvim",
+    url = "https://github.com/ray-x/go.nvim"
+  },
+  ["guihua.lua"] = {
+    loaded = true,
+    path = "/Users/petery/.local/share/nvim/site/pack/packer/start/guihua.lua",
+    url = "https://github.com/ray-x/guihua.lua"
+  },
   ["indent-blankline.nvim"] = {
     loaded = true,
     path = "/Users/petery/.local/share/nvim/site/pack/packer/start/indent-blankline.nvim",
@@ -223,6 +233,11 @@ _G.packer_plugins = {
     loaded = true,
     path = "/Users/petery/.local/share/nvim/site/pack/packer/start/telescope.nvim",
     url = "https://github.com/nvim-telescope/telescope.nvim"
+  },
+  ["vim-commentary"] = {
+    loaded = true,
+    path = "/Users/petery/.local/share/nvim/site/pack/packer/start/vim-commentary",
+    url = "https://github.com/tpope/vim-commentary"
   },
   ["vim-fugitive"] = {
     loaded = true,
