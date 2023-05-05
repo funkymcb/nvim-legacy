@@ -59,6 +59,9 @@ return require('packer').startup(function(use)
    -- fun fun fun
    use 'eandrju/cellular-automaton.nvim'
 
+   -- tmux-like zoom
+   use 'dhruvasagar/vim-zoom'
+
    -- local developing
    use '~/Coding/github.com/funkymcb/nvim-rest-client'
    -- use this after release:
