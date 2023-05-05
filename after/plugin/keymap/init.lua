@@ -51,6 +51,9 @@ nnoremap("<leader>fc", ":lua require('telescope.builtin').git_commits()<CR>")
 -- nvim-rest-client
 nnoremap("<leader>fr", ":NvimRestClientFindRequests<CR>")
 
+-- signature
+nnoremap("<C-c>", ":lua require('lsp_signature').togle_key")
+
 -- fugitive
 nnoremap("<leader>gs", ":G<CR>")
 nnoremap("<leader>gc", ":G commit<CR>")

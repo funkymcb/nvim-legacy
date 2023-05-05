@@ -31,6 +31,11 @@ lsp.configure('yamlls', {
                "hpa.yaml",
                "release.yaml"
             },
+            -- TODO fix this!
+            -- ["~/empiriecom/gitlab/empiriecom/core/flux-operator/bootstrap-emp-staging/scripts/crd-schemas"] = {
+            --    "/*.yaml",
+            --    "/*.yml"
+            -- },
             ["http://json.schemastore.org/kustomization"] = "kustomization.yaml",
             -- github workflows
             ["https://json.schemastore.org/github-workflow.json"] = "/.github/workflows/*",
@@ -51,10 +56,6 @@ lsp.on_attach(function(client, bufnr)
    vim.keymap.set('n', '<space>gi', vim.lsp.buf.implementation, bufopts)
    vim.keymap.set('n', '<space>n', vim.diagnostic.goto_next, opts)
    vim.keymap.set('n', '<space>p', vim.diagnostic.goto_prev, opts)
-
-   -- -- Use LSP as the handler for formatexpr.
-   -- --    See `:help formatexpr` for more information.
-   -- vim.api.nvim_buf_set_option(bufnr, 'formatexpr', 'v:lua.vim.lsp.formatexpr()')
 end)
 
 lsp.setup()

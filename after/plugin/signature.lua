@@ -5,6 +5,7 @@ require'lsp_signature'.setup({
    bind = true,
    hint_prefix = "💡 ",
    hi_parameter = "LspSignatureActiveCustomParameter",
+   transparency = 50,
    handler_opts = {
       border = "rounded"
    }
