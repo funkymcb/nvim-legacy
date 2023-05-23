@@ -4,6 +4,10 @@ require("telescope").setup({
       file_sorter = require("telescope.sorters").get_fzy_sorter,
       color_devicons = true,
 
+      find_files = {
+         hidden = true
+      },
+
       mappings = {
          i = {
             ["<Tab>"] = actions.file_split, -- workaround for <c-i>
