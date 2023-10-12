@@ -29,7 +29,6 @@ lsp.configure('yamlls', {
                "service.yaml",
                "namespace.yaml",
                "hpa.yaml",
-               "release.yaml"
             },
             -- TODO fix this!
             -- ["~/empiriecom/gitlab/empiriecom/core/flux-operator/bootstrap-emp-staging/scripts/crd-schemas"] = {
